@@ -38,7 +38,7 @@ and they will be included.
 
 These are not the fastest possible implementations. In fact, I guarantee they
 are not. Performance has been sacrificed for compatibility with their builtin
-counterpars.
+counterparts.
 
 Changes
 -------
