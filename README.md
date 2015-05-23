@@ -3,6 +3,8 @@ PHP stable sort functions
 Copyright &copy; 2015 Martijn van der Lee (http://martijn.vanderlee.com).
 MIT Open Source license applies.
 
+Introduction
+------------
 Collection of sort functions using stable sort. Equal values remain in the
 original order. Only different values are sorted.
 
@@ -15,13 +17,13 @@ the specific function(s) you need, this makes it easier. Just copy & paste.
 
 Functions
 ---------
-*	`bool **sarsort** ( array &$array [, int $sort_flags = SORT_REGULAR ] )`		
-*	`bool **sasort** ( array &$array [, int $sort_flags = SORT_REGULAR ] )`
-*	`bool **snatcasesort** ( array &Sarray )`
-*	`bool **snatsort** ( array &Sarray )`
-*	`bool **suasort** ( array &$array , callable $value_compare_func )`
-*	`bool **suksort** ( array &$array , callable $value_compare_func )`
-*	`bool **susort** ( array &$array , callable $value_compare_func )`
+*	`bool sarsort ( array &$array [, int $sort_flags = SORT_REGULAR ] )`		
+*	`bool sasort ( array &$array [, int $sort_flags = SORT_REGULAR ] )`
+*	`bool snatcasesort ( array &Sarray )`
+*	`bool snatsort ( array &Sarray )`
+*	`bool suasort ( array &$array , callable $value_compare_func )`
+*	`bool suksort ( array &$array , callable $value_compare_func )`
+*	`bool susort ( array &$array , callable $value_compare_func )`
 
 Tests
 -----
@@ -38,7 +40,7 @@ These are not the fastest possible implementations. In fact, I guarantee they
 are not. Performance has been sacrificed for compatibility with their builtin
 counterpars.
 
-Changelog
-----------
+Changes
+-------
 ### 2015-05-23
 *	Initial public release
