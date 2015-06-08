@@ -1,5 +1,8 @@
 PHP stable sort functions
-=====================
+=========================
+Version 1.0
+[![Build Status](https://travis-ci.org/vanderlee/PHP-stable-sort-functions.svg)](https://travis-ci.org/vanderlee/PHP-stable-sort-functions)
+
 Copyright &copy; 2015 Martijn van der Lee (http://martijn.vanderlee.com).
 MIT Open Source license applies.
 
