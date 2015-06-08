@@ -36,6 +36,7 @@ class sasortTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * @covers sasort
 	 * @group  stablesort
+	 * @requires PHP 5.4
 	 */
 	public function testNatural() {	
 		$array = array('a9', 'a1', 'a10');
