@@ -24,16 +24,15 @@ class suksortTest extends PHPUnit_Framework_TestCase {
 			'a3'	=> 1,
 		);
 		
+		
+		$function = create_function('$a, $b', 'return strcmp(substr($a, 1), substr($b, 1));');		
+		
 		$array = $source;
-		uksort($array, function($a, $b) {
-			return strcmp(substr($a, 1), substr($b, 1));
-		});
+		uksort($array, $function);
 		$this->assertNotSame($expected, $array);
 		
 		$array = $source;
-		suksort($array, function($a, $b) {
-			return strcmp(substr($a, 1), substr($b, 1));
-		});
+		suksort($array, $function);
 		$this->assertSame($expected, $array);
 	}
 }

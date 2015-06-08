@@ -24,16 +24,14 @@ class susortTest extends PHPUnit_Framework_TestCase {
 			3 => array('red', 3),
 		);
 		
+		$function = create_function('$a, $b', 'return $a[1] - $b[1];');		
+		
 		$array = $source;
-		usort($array, function($a, $b) {
-			return $a[1] - $b[1];
-		});
+		usort($array, $function);
 		$this->assertNotSame($expected, $array);
 		
 		$array = $source;
-		susort($array, function($a, $b) {
-			return $a[1] - $b[1];
-		});
+		susort($array, $function);
 		$this->assertSame($expected, $array);
 	}
 }

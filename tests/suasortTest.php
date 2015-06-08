@@ -24,16 +24,14 @@ class suasortTest extends PHPUnit_Framework_TestCase {
 			'a'	=> array('red', 3),
 		);
 		
+		$function = create_function('$a, $b', 'return $a[1] - $b[1];');		
+
 		$array = $source;
-		uasort($array, function($a, $b) {
-			return $a[1] - $b[1];
-		});
+		uasort($array, $function);
 		$this->assertNotSame($expected, $array);
 		
 		$array = $source;
-		suasort($array, function($a, $b) {
-			return $a[1] - $b[1];
-		});
+		suasort($array, $function);
 		$this->assertSame($expected, $array);
 	}
 }
