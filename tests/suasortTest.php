@@ -5,6 +5,10 @@
  */
 class suasortTest extends PHPUnit_Framework_TestCase {
 
+	public function compare_integer($a, $b) {
+		return $a[1] - $b[1];
+	}
+	
 	/**
 	 * @covers sasort
 	 * @group  stablesort
@@ -24,14 +28,12 @@ class suasortTest extends PHPUnit_Framework_TestCase {
 			'a'	=> array('red', 3),
 		);
 		
-		$function = create_function('$a, $b', 'return $a[1] - $b[1];');		
-
 		$array = $source;
-		uasort($array, $function);
+		uasort($array, array($this, 'compare_integer'));
 		$this->assertNotSame($expected, $array);
 		
 		$array = $source;
-		suasort($array, $function);
+		suasort($array, array($this, 'compare_integer'));
 		$this->assertSame($expected, $array);
 	}
 }
