@@ -10,8 +10,10 @@ class suksortTest extends PHPUnit_Framework_TestCase {
 	}
 		
 	/**
+	 * Untestable on PHP 5.3
 	 * @covers sasort
 	 * @group  stablesort
+	 * @requires PHP 5.4 
 	 */
 	public function testAssociation() {
 		$source = array(
