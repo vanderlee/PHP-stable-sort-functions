@@ -1,12 +1,12 @@
 <?php
 
-	require_once 'susort.php';
-	require_once 'suksort.php';
-	require_once 'suasort.php';
-	require_once 'snatsort.php';
-	require_once 'snatcasesort.php';
-	require_once 'sasort.php';
-	require_once 'sarsort.php';
+	require_once 'functions/susort.php';
+	require_once 'functions/suksort.php';
+	require_once 'functions/suasort.php';
+	require_once 'functions/snatsort.php';
+	require_once 'functions/snatcasesort.php';
+	require_once 'functions/sasort.php';
+	require_once 'functions/sarsort.php';
 
 
 
