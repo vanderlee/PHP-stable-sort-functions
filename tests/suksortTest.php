@@ -5,7 +5,7 @@
  */
 class suksortTest extends PHPUnit_Framework_TestCase {
 
-	public function compare_string_skip($a, $b) {
+	public static function compare_string_skip($a, $b) {
 		return strcmp(substr($a, 1), substr($b, 1));
 	}
 		
@@ -30,11 +30,11 @@ class suksortTest extends PHPUnit_Framework_TestCase {
 		
 		
 		$array = $source;
-		uksort($array, array($this, 'compare_string_skip'));
+		uksort($array, array(__CLASS__, 'compare_string_skip'));
 		$this->assertNotSame($expected, $array);
 		
 		$array = $source;
-		suksort($array, array($this, 'compare_string_skip'));
+		suksort($array, array(__CLASS__, 'compare_string_skip'));
 		$this->assertSame($expected, $array);
 	}
 }

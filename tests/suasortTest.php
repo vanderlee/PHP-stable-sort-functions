@@ -5,7 +5,7 @@
  */
 class suasortTest extends PHPUnit_Framework_TestCase {
 
-	public function compare_integer($a, $b) {
+	public static function compare_integer($a, $b) {
 		return $a[1] - $b[1];
 	}
 	
@@ -29,11 +29,11 @@ class suasortTest extends PHPUnit_Framework_TestCase {
 		);
 		
 		$array = $source;
-		uasort($array, array($this, 'compare_integer'));
+		uasort($array, array(__CLASS__, 'compare_integer'));
 		$this->assertNotSame($expected, $array);
 		
 		$array = $source;
-		suasort($array, array($this, 'compare_integer'));
+		suasort($array, array(__CLASS__, 'compare_integer'));
 		$this->assertSame($expected, $array);
 	}
 }
