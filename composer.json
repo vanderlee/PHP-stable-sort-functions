@@ -2,7 +2,7 @@
     "name": "vanderlee/php-stable-sort-functions",
     "description": "Collection of sort functions using stable sort. Equal values remain in the original order. Only different values are sorted.",
         "type": "library",
-    "keywords": ["sort", "array", "arsort", "asort", "natcasesort", "natsort", "uasort", "uksort", "usort"],
+    "keywords": ["sort", "stable", "array", "arsort", "asort", "natcasesort", "natsort", "uasort", "uksort", "usort"],
     "homepage": "https://github.com/vanderlee/PHP-stable-sort-functions",
     "license": "MIT",
         "support": {

@@ -1,6 +1,6 @@
 PHP stable sort functions
 =========================
-Version 1.0
+Version 1.0.1
 [![Build Status](https://travis-ci.org/vanderlee/PHP-stable-sort-functions.svg)](https://travis-ci.org/vanderlee/PHP-stable-sort-functions)
 
 Copyright &copy; 2015 Martijn van der Lee (http://martijn.vanderlee.com).
@@ -45,5 +45,8 @@ counterparts.
 
 Changes
 -------
-### 2015-05-23
+### 1.0.1
+*	composer.json added by @thebeline.
+
+### 1.0
 *	Initial public release
