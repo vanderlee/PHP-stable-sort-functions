@@ -38,13 +38,19 @@ class sarsortTest extends PHPUnit_Framework_TestCase {
 	 * @group  stablesort
 	 * @requires PHP 5.4
 	 */
-	public function testNatural() {	
-		$array = array('a9', 'a1', 'a10');
-		sarsort($array, SORT_REGULAR);
-		$this->assertNotSame(array(2 => 'a10', 0 => 'a9', 1 => 'a1'), $array);
-		
+	public function testNatural() {
 		$array = array('a9', 'a1', 'a10');
 		sarsort($array, SORT_NATURAL);
 		$this->assertSame(array(2 => 'a10', 0 => 'a9', 1 => 'a1'), $array);
+	}
+
+	/**
+	 * @covers sasort
+	 * @group  stablesort
+	 */
+	public function testRegular() {
+		$array = array('a9', 'a1', 'a10');
+		sarsort($array, SORT_REGULAR);
+		$this->assertNotSame(array(2 => 'a10', 0 => 'a9', 1 => 'a1'), $array);
 	}
 }
