@@ -28,11 +28,6 @@ class suksortTest extends PHPUnit_Framework_TestCase {
 			'a3'	=> 1,
 		);
 		
-		
-		$array = $source;
-		uksort($array, array(__CLASS__, 'compare_string_skip'));
-		$this->assertNotSame($expected, $array);
-		
 		$array = $source;
 		suksort($array, array(__CLASS__, 'compare_string_skip'));
 		$this->assertSame($expected, $array);

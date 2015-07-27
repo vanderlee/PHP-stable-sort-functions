@@ -25,10 +25,6 @@ class sasortTest extends PHPUnit_Framework_TestCase {
 		);
 		
 		$array = $source;
-		asort($array);
-		$this->assertNotSame($expected, $array);
-		
-		$array = $source;
 		sasort($array);
 		$this->assertSame($expected, $array);
 	}

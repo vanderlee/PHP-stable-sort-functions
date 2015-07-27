@@ -29,10 +29,6 @@ class suasortTest extends PHPUnit_Framework_TestCase {
 		);
 		
 		$array = $source;
-		uasort($array, array(__CLASS__, 'compare_integer'));
-		$this->assertNotSame($expected, $array);
-		
-		$array = $source;
 		suasort($array, array(__CLASS__, 'compare_integer'));
 		$this->assertSame($expected, $array);
 	}

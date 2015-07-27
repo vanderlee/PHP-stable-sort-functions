@@ -29,10 +29,6 @@ class susortTest extends PHPUnit_Framework_TestCase {
 		);
 		
 		$array = $source;
-		usort($array, array(__CLASS__, 'compare_integer'));
-		$this->assertNotSame($expected, $array);
-		
-		$array = $source;
 		susort($array, array(__CLASS__, 'compare_integer'));
 		$this->assertSame($expected, $array);
 	}
