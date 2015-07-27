@@ -6,7 +6,7 @@
 class sarsortTest extends PHPUnit_Framework_TestCase {
 
 	/**
-	 * @covers sasort
+	 * @covers sarsort
 	 * @group  stablesort
 	 */
 	public function testAssociation() {
@@ -34,7 +34,7 @@ class sarsortTest extends PHPUnit_Framework_TestCase {
 	}
 	
 	/**
-	 * @covers sasort
+	 * @covers sarsort
 	 * @group  stablesort
 	 * @requires PHP 5.4
 	 */
@@ -45,7 +45,7 @@ class sarsortTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @covers sasort
+	 * @covers sarsort
 	 * @group  stablesort
 	 */
 	public function testRegular() {

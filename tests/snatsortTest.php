@@ -6,7 +6,7 @@
 class snatsortTest extends PHPUnit_Framework_TestCase {
 
 	/**
-	 * @covers sasort
+	 * @covers snatsort
 	 * @group  stablesort
 	 */
 	public function testAssociation() {

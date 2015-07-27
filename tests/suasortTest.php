@@ -10,7 +10,7 @@ class suasortTest extends PHPUnit_Framework_TestCase {
 	}
 	
 	/**
-	 * @covers sasort
+	 * @covers suasort
 	 * @group  stablesort
 	 */
 	public function testAssociation() {
