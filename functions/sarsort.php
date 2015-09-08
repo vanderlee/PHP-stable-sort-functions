@@ -13,6 +13,7 @@
 			
 			$set = array(-1 => $b[1], 1 => $a[1]);
 			asort($set, $sort_flags);
+			reset($set);
 			return key($set);
 		});
 

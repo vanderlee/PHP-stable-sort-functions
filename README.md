@@ -1,6 +1,6 @@
 PHP stable sort functions
 =========================
-Version 1.0.2
+Version 1.0.3
 [![Build Status](https://travis-ci.org/vanderlee/PHP-stable-sort-functions.svg)](https://travis-ci.org/vanderlee/PHP-stable-sort-functions)
 
 Copyright &copy; 2015 Martijn van der Lee (http://martijn.vanderlee.com).
@@ -45,6 +45,9 @@ counterparts.
 
 Changes
 -------
+### 1.0.3
+*	Added `reset` calls to `sasort`/`sarsort` to ensure pointer. By @emilv.
+
 ### 1.0.2
 *	PHP 5.3 compatibility changes by @folliked.
 
