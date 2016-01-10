@@ -1,27 +1,16 @@
 {
-    "name": "vanderlee/php-stable-sort-functions",
-    "description": "Collection of sort functions using stable sort. Equal values remain in the original order. Only different values are sorted.",
+    "name": "vanderlee/php-stable-sort",
+    "description": "Class of stable sort methods. Equal values remain in the original order. Only different values are sorted.",
         "type": "library",
     "keywords": ["sort", "stable", "array", "arsort", "asort", "natcasesort", "natsort", "uasort", "uksort", "usort"],
-    "homepage": "https://github.com/vanderlee/PHP-stable-sort-functions",
+    "homepage": "https://github.com/vanderlee/PHP-stable-sort",
     "license": "MIT",
         "support": {
-                "issues": "https://github.com/vanderlee/PHP-stable-sort-functions/issues",
-                "source": "https://github.com/vanderlee/PHP-stable-sort-functions/"
+                "issues": "https://github.com/vanderlee/PHP-stable-sort/issues",
+                "source": "https://github.com/vanderlee/PHP-stable-sort/"
         },
     "require": {
         "php": ">=5.3.0"
-    },
-    "autoload": {
-        "files": [
-            "functions/sarsort.php",
-            "functions/sasort.php",
-            "functions/snatcasesort.php",
-            "functions/snatsort.php",
-            "functions/suasort.php",
-            "functions/suksort.php",
-            "functions/susort.php"
-        ]
     }
 }
 

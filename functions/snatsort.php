@@ -1,19 +1,8 @@
 <?php
 
-	function snatsort(array &$array) {
-		$index = 0;
-		foreach ($array as &$item) {
-			$item = array($index++, $item);
-		}
+function snatsort(array &$array)
+{
+	require_once dirname(__DIR__) . '/classes/StableSort.php';
 
-		$result = uasort($array, function($a, $b) {					
-			$result = strnatcmp($a[1], $b[1]);
-			return $result == 0 ? $a[0] - $b[0] : $result;
-		});
-
-		foreach ($array as &$item) {
-			$item = $item[1];
-		}
-
-		return $result;
-	}
+	return StableSort::natsort($array);
+}

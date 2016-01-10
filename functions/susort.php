@@ -1,19 +1,8 @@
 <?php
 
-	function susort(array &$array, $value_compare_func) {
-		$index = 0;
-		foreach ($array as &$item) {
-			$item = array($index++, $item);
-		}
+function susort(array &$array, $value_compare_func)
+{
+	require_once dirname(__DIR__) . '/classes/StableSort.php';
 
-		$result = usort($array, function($a, $b) use($value_compare_func) {					
-			$result = call_user_func($value_compare_func, $a[1], $b[1]);
-			return $result == 0 ? $a[0] - $b[0] : $result;
-		});
-
-		foreach ($array as &$item) {
-			$item = $item[1];
-		}
-
-		return $result;
-	}
+	return StableSort::usort($array, $value_compare_func);
+}
