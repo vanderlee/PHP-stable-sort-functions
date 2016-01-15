@@ -1,6 +1,6 @@
 PHP stable sort
 ===============
-Version 2.0.1
+Version 2.0.2
 [![Build Status](https://travis-ci.org/vanderlee/PHP-stable-sort-functions.svg)](https://travis-ci.org/vanderlee/PHP-stable-sort-functions)
 
 Copyright &copy; 2015-2016 Martijn van der Lee (http://martijn.vanderlee.com).
