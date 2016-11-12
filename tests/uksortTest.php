@@ -1,7 +1,6 @@
 <?php
 
-class uksortTest extends PHPUnit_Framework_TestCase
-{
+class uksortTest extends PHPUnit_Framework_TestCase {
 
 	public static function compare_string_skip($a, $b)
 	{
@@ -26,6 +25,31 @@ class uksortTest extends PHPUnit_Framework_TestCase
 			'b2' => 2,
 			'c2' => 3,
 			'a3' => 1,
+		);
+
+		$array = $source;
+		StableSort::uksort($array, array(__CLASS__, 'compare_string_skip'));
+		$this->assertSame($expected, $array);
+	}
+
+	/**
+	 * @covers StableSort::uksort
+	 * @group  stablesort
+	 */
+	public function testFloat()
+	{
+		$source = array(
+			'a3' => .1,
+			'b2' => .2,
+			'c2' => .3,
+			'd1' => .4,
+		);
+
+		$expected = array(
+			'd1' => .4,
+			'b2' => .2,
+			'c2' => .3,
+			'a3' => .1,
 		);
 
 		$array = $source;
