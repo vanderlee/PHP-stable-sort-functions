@@ -7,6 +7,11 @@ class usortTest extends PHPUnit_Framework_TestCase
 	{
 		return $a[1] - $b[1];
 	}
+	
+	public static function compare_float($a, $b)
+	{
+		return $a[1] < $b[1] ? -1 : ($a[1] > $b[1] ? 1 : 0);
+	}	
 
 	/**
 	 * @covers StableSort::usort
@@ -30,6 +35,31 @@ class usortTest extends PHPUnit_Framework_TestCase
 
 		$array = $source;
 		StableSort::usort($array, array(__CLASS__, 'compare_integer'));
+		$this->assertSame($expected, $array);
+	}
+
+	/**
+	 * @covers StableSort::usort
+	 * @group  stablesort
+	 */
+	public function testFloat()
+	{
+		$source = array(
+			'a' => array('red', .3),
+			'b' => array('green', .2),
+			'c' => array('blue', .2),
+			'd' => array('yellow', .1),
+		);
+
+		$expected = array(
+			0 => array('yellow', .1),
+			1 => array('green', .2),
+			2 => array('blue', .2),
+			3 => array('red', .3),
+		);
+
+		$array = $source;
+		StableSort::usort($array, array(__CLASS__, 'compare_float'));
 		$this->assertSame($expected, $array);
 	}
 
