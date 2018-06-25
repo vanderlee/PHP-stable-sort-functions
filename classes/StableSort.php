@@ -1,5 +1,7 @@
 <?php
 
+namespace StableSort;
+
 /**
  * SortArray utility class.
  */
