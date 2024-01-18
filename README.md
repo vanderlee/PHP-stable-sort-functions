@@ -1,6 +1,6 @@
 PHP stable sort
 ===============
-Version 2.0.4
+Version 2.0.5
 [![Build Status](https://travis-ci.org/vanderlee/PHP-stable-sort-functions.svg)](https://travis-ci.org/vanderlee/PHP-stable-sort-functions)
 
 Copyright &copy; 2015-2018 Martijn van der Lee (http://martijn.vanderlee.com).
@@ -45,6 +45,9 @@ counterparts.
 
 Changes
 -------
+### 2.0.5
+*   PHP 8 sorts stable by default. Use native methods if PHP 8 or more recent.
+
 ### 2.0.1
 *	Merge @joelpittet 2.0.0 into main branch, cleaning Drupal specifics.
 

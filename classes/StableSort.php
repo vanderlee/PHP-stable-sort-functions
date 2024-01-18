@@ -10,6 +10,10 @@ class StableSort
 
 	static public function arsort(array &$array, $sort_flags = SORT_REGULAR)
 	{
+        if (PHP_MAJOR_VERSION >= 8) {
+            return arsort($array, $sort_flags);
+        }
+
 		$index = 0;
 		foreach ($array as &$item) {
 			$item = array($index++, $item);
@@ -35,7 +39,11 @@ class StableSort
 
 	static public function asort(array &$array, $sort_flags = SORT_REGULAR)
 	{
-		$index = 0;
+        if (PHP_MAJOR_VERSION >= 8) {
+            return asort($array, $sort_flags);
+        }
+
+        $index = 0;
 		foreach ($array as &$item) {
 			$item = array($index++, $item);
 		}
@@ -60,6 +68,10 @@ class StableSort
 
 	static public function natcasesort(array &$array)
 	{
+        if (PHP_MAJOR_VERSION >= 8) {
+            return natcasesort($array);
+        }
+
 		$index = 0;
 		foreach ($array as &$item) {
 			$item = array($index++, $item);
@@ -79,6 +91,10 @@ class StableSort
 
 	static public function natsort(array &$array)
 	{
+        if (PHP_MAJOR_VERSION >= 8) {
+            return natsort($array);
+        }
+
 		$index = 0;
 		foreach ($array as &$item) {
 			$item = array($index++, $item);
@@ -98,6 +114,10 @@ class StableSort
 
 	static public function uasort(array &$array, $value_compare_func)
 	{
+        if (PHP_MAJOR_VERSION >= 8) {
+            return uasort($array, $value_compare_func);
+        }
+
 		$index = 0;
 		foreach ($array as &$item) {
 			$item = array($index++, $item);
@@ -117,6 +137,10 @@ class StableSort
 
 	static public function uksort(array &$array, $value_compare_func)
 	{
+        if (PHP_MAJOR_VERSION >= 8) {
+            return uksort($array, $value_compare_func);
+        }
+
 		$keys = array_combine(array_keys($array), range(1, count($array)));
 
 		$result = uksort($array, function($a, $b) use($value_compare_func, $keys) {
@@ -129,6 +153,10 @@ class StableSort
 
 	static public function usort(array &$array, $value_compare_func)
 	{
+        if (PHP_MAJOR_VERSION >= 8) {
+            return usort($array, $value_compare_func);
+        }
+
 		$index = 0;
 		foreach ($array as &$item) {
 			$item = array($index++, $item);
