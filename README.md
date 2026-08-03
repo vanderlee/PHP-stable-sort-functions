@@ -1,6 +1,6 @@
 # PHP stable sort
 
-Version 2.0.6
+Version 2.0.7
 
 [![Tests](https://github.com/vanderlee/PHP-stable-sort-functions/actions/workflows/tests.yml/badge.svg)](https://github.com/vanderlee/PHP-stable-sort-functions/actions/workflows/tests.yml)
 
@@ -81,6 +81,12 @@ Only operations for which stable ordering is meaningful are included. Functions 
 The legacy implementation prioritizes compatibility with PHP's built-in sorting interfaces over raw performance. On PHP 8+, native functions are used directly.
 
 ## Changes
+
+### 2.0.7
+
+- Restore reproducible CI across supported PHP versions.
+- Refresh project documentation.
+- Fix legacy sort edge cases.
 
 ### 2.0.6
 
