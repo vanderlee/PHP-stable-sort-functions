@@ -56,10 +56,6 @@ class edgeCasesTest extends PHPUnit_Framework_TestCase
      */
     public function testUsortLeavesInputUntouchedWhenComparatorThrows()
     {
-        if (PHP_MAJOR_VERSION >= 8) {
-            $this->markTestSkipped('The PHP 8 branch delegates directly to native usort().');
-        }
-
         $source = array(
             array('first', 2),
             array('second', 1),
@@ -82,10 +78,6 @@ class edgeCasesTest extends PHPUnit_Framework_TestCase
      */
     public function testUasortLeavesInputUntouchedWhenComparatorThrows()
     {
-        if (PHP_MAJOR_VERSION >= 8) {
-            $this->markTestSkipped('The PHP 8 branch delegates directly to native uasort().');
-        }
-
         $source = array(
             'first' => array('first', 2),
             'second' => array('second', 1),
