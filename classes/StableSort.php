@@ -8,42 +8,44 @@ namespace StableSort;
 class StableSort
 {
 
-    private static function compareValues($a, $b, $sort_flags)
+    private static function createValueComparator($sort_flags)
     {
         $caseFlag = defined('SORT_FLAG_CASE') ? constant('SORT_FLAG_CASE') : 0;
         $caseInsensitive = $caseFlag && (($sort_flags & $caseFlag) === $caseFlag);
         $baseFlags = $caseInsensitive ? ($sort_flags & ~$caseFlag) : $sort_flags;
 
-        if (defined('SORT_NATURAL') && $baseFlags === constant('SORT_NATURAL')) {
-            return $caseInsensitive
-                ? strnatcasecmp((string) $a, (string) $b)
-                : strnatcmp((string) $a, (string) $b);
-        }
-
-        switch ($baseFlags) {
-            case SORT_NUMERIC:
-                if ((float) $a == (float) $b) {
-                    return 0;
-                }
-
-                return (float) $a < (float) $b ? -1 : 1;
-
-            case SORT_STRING:
+        return function($a, $b) use($caseInsensitive, $baseFlags) {
+            if (defined('SORT_NATURAL') && $baseFlags === constant('SORT_NATURAL')) {
                 return $caseInsensitive
-                    ? strcasecmp((string) $a, (string) $b)
-                    : strcmp((string) $a, (string) $b);
+                    ? strnatcasecmp((string) $a, (string) $b)
+                    : strnatcmp((string) $a, (string) $b);
+            }
 
-            case SORT_LOCALE_STRING:
-                return strcoll((string) $a, (string) $b);
+            switch ($baseFlags) {
+                case SORT_NUMERIC:
+                    if ((float) $a == (float) $b) {
+                        return 0;
+                    }
 
-            case SORT_REGULAR:
-            default:
-                if ($a == $b) {
-                    return 0;
-                }
+                    return (float) $a < (float) $b ? -1 : 1;
 
-                return $a < $b ? -1 : 1;
-        }
+                case SORT_STRING:
+                    return $caseInsensitive
+                        ? strcasecmp((string) $a, (string) $b)
+                        : strcmp((string) $a, (string) $b);
+
+                case SORT_LOCALE_STRING:
+                    return strcoll((string) $a, (string) $b);
+
+                case SORT_REGULAR:
+                default:
+                    if ($a == $b) {
+                        return 0;
+                    }
+
+                    return $a < $b ? -1 : 1;
+            }
+        };
     }
 
     static public function arsort(array &$array, $sort_flags = SORT_REGULAR)
@@ -58,8 +60,9 @@ class StableSort
             $decorated[$key] = array($index++, $item);
         }
 
-        $result = uasort($decorated, function($a, $b) use($sort_flags) {
-            $comparison = self::compareValues($a[1], $b[1], $sort_flags);
+        $compareValues = self::createValueComparator($sort_flags);
+        $result = uasort($decorated, function($a, $b) use($compareValues) {
+            $comparison = call_user_func($compareValues, $a[1], $b[1]);
             return $comparison == 0 ? $a[0] - $b[0] : -$comparison;
         });
 
@@ -84,8 +87,9 @@ class StableSort
             $decorated[$key] = array($index++, $item);
         }
 
-        $result = uasort($decorated, function($a, $b) use($sort_flags) {
-            $comparison = self::compareValues($a[1], $b[1], $sort_flags);
+        $compareValues = self::createValueComparator($sort_flags);
+        $result = uasort($decorated, function($a, $b) use($compareValues) {
+            $comparison = call_user_func($compareValues, $a[1], $b[1]);
             return $comparison == 0 ? $a[0] - $b[0] : $comparison;
         });
 
